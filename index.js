@@ -138,3 +138,24 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+
+
+
+
+// lazy loading image
+
+const imgRef = document.querySelector("img[data-src]");
+
+const lazyImg = (entries) =>{
+  const [entry] = entries;
+  if(!entry.isIntersecting) return;
+  entry.target.src = imgRef.dataset.src; 
+}
+
+const ImgObserver = new IntersectionObserver(lazyImg , {
+  roll:null,
+  threshold:0,
+});
+
+
+ImgObserver.observe(imgRef);
