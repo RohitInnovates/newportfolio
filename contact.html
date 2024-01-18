@@ -35,54 +35,28 @@
      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7003.380347284106!2d77.42293450000001!3d28.639046500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1705166947764!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
       <div class="section-contact-main contact-container">
-        <form action="#">
-          <div class="grid grid-two-column">
-            <div>
-              <label for="username"></label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Username"
-              />
-            </div>
-            <div>
-              <label for="email"></label>
-              <input
-                type="email"
-                name="email"
-                placeholder="demo@gmail.com"
-                id="email"
-              />
-            </div>
+      <form  action="https://formspree.io/f/mzbnzqdo" method="POST">
+        <div class="grid grid-two-column">
+          <div>
+            <label for="username"></label>
+            <input type="text" name="username" id="username" placeholder="Username"  autocomplete="off" required/>
           </div>
           <div>
-            <label for="subject"></label>
-            <input
-              type="text"
-              name="subject"
-              placeholder="subject"
-              id="subject"
-            />
+            <label for="email"></label>
+            <input type="email" name="email" placeholder="demo@gmail.com" id="email" autocomplete="off" required />
           </div>
-          <div>
-            <label for="textarea"></label>
-            <textarea
-              name="textarea"
-              id="textarea"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </div>
-          <input
-            type="submit"
-            name="submit"
-            id="submit"
-            class="btn"
-            value="Send Message"
-          />
-        </form>
-      </div>
+        </div>
+        <div>
+          <label for="subject"></label>
+          <input type="text" name="subject" placeholder="subject" id="subject" autocomplete="off" required />
+        </div>
+        <div>
+          <label for="textarea"></label>
+          <textarea name="textarea" id="textarea" cols="30" rows="10" autocomplete="off" required min="5"></textarea>
+        </div>
+        <input type="submit" name="submit" id="submit" class="btn" value="Send Message" />
+      </form>
+    </div>
     </section>
       <!-- our footer section -->
 
