@@ -28,6 +28,9 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
+body{
+  overflow-x: hidden;
+}
 h1,
 h2,
 h3,
@@ -1033,7 +1036,89 @@ font-size: rem;
 
 /* Media Queries */
 
-@media (max-width:10px) {
+/* hero section */
+
+@media(max-width:1400px){
+  .container{
+    max-width: 120rem;
+    padding: 0 2.8rem;
+  }
+
+  .navbar-lists{
+
+    gap: 3rem;
+
+  }
+
+
+}
+
+@media(max-width:1100px){
+  .header{
+    position:relative;
+  }
+}
+
+@media(max-width:1200px){
+  html{
+    font-size: 52.25%;
+  }
+  .container{
+    max-width:110rem ;
+  }
+  .grid{
+    gap:4.2rem;
+  }
+  .section-resume .grid-two-column{
+    grid-template-columns: 1fr 2fr;
+  }
+  .section-resume .resume-data-subsection .grid-two-column{
+    grid-template-columns: 1fr 1fr;
+  } 
+}
+@media(max-width:960px){
+  html{
+    font-size: 50%;
+  }
+
+  /* hero section */
+
+.hero-section h1{
+  line-height: 1.05;
+}
+
+/* service section */
+
+.section-services .grid{
+  gap: 5rem;
+}
+
+.section-services .grid-three-column{
+  grid-template-columns: repeat(2 ,1fr);
+}
+
+/* resume section */
+
+.section-services .grid-two-column{
+  grid-template-columns: 1fr;
+}
+
+.resume-img{
+  grid-row: 2;
+}
+
+.section-resume .grid-two-column img{
+  width: 50%;
+}
+
+.footer-section .grid-four-column{
+  grid-template-columns: 1fr,1fr;
+}
+
+}
+
+
+@media (max-width:680px) {
   .top-header{
     position: relative;
   }
@@ -1063,3 +1148,6 @@ font-size: rem;
   }
 
 }
+
+
+
