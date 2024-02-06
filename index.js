@@ -14,6 +14,9 @@ var typeData = new Typed(".role", {
   backDelay: 1000,
 });
 
+
+
+
 // create  a portfolio tabbed component
 
 const heroSection = document.querySelector(".hero-section");
@@ -43,6 +46,19 @@ p_btns.addEventListener("click", (e) => {
   );
 });
 
+
+// create a responsive navbar
+
+const mobile_nav = document.querySelector(".mobile-navbar-btn");
+const headerElem = document.querySelector(".top-header");
+
+mobile_nav.addEventListener('click',() => {
+  headerElem.classList.toggle("active");
+});
+
+
+
+
 // crete sticky navbar
 
 const observer = new IntersectionObserver(
@@ -56,6 +72,7 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(heroSection);
+
 
 
 /// ========================================
@@ -104,8 +121,6 @@ const workSecObserver = new IntersectionObserver(workSectionObserve, {
 workSecObserver.observe(workSection);
 
 
-
-
 // scroll to top button
 
 const footerElem = document.querySelector(".footer-section");
@@ -124,20 +139,50 @@ const scrollTop = () => {
 scrollElement.addEventListener("click", scrollTop);
 
 
-//  swiper js code
 
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  // autoplay: {
-  //   delay:2500,
-  //   // disableOnInteraction:false;
-  // },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+
+
+
+// ========================================
+//  how to add media queries in JS
+// ========================================
+function myFunction(widthSize) {
+    if (widthSize.matches) {
+        // If media query matches
+        const swiper = new Swiper(".swiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    } else {
+        const swiper = new Swiper(".swiper", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+}
+
+const widthSize = window.matchMedia("(max-width: 780px)");
+// Call listener function at run time
+myFunction(widthSize);
+// Attach listener function on state changes
+widthSize.addListener(myFunction);
 
 
 
@@ -153,9 +198,8 @@ const lazyImg = (entries) =>{
 }
 
 const ImgObserver = new IntersectionObserver(lazyImg , {
-  roll:null,
+  root:null,
   threshold:0,
 });
-
 
 ImgObserver.observe(imgRef);
